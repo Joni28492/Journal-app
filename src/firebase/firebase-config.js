@@ -2,15 +2,35 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
+// console.log(process.env);
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCj4DAJuptXNaIgQmQBxvYsSSrWo_mz2Mw",
-    authDomain: "react-app-cursos-db9ff.firebaseapp.com",
-    projectId: "react-app-cursos-db9ff",
-    storageBucket: "react-app-cursos-db9ff.appspot.com",
-    messagingSenderId: "657813584416",
-    appId: "1:657813584416:web:bd07eba84a7a6f082bda45"
+    apiKey:process.env.REACT_APP_APIKEY, 
+    authDomain:process.env.REACT_APP_AUTHDOMAIN, 
+    projectId:process.env.REACT_APP_PROJECTID, 
+    storageBucket:process.env.REACT_APP_STORAGEBUCKET, 
+    messagingSenderId:process.env.REACT_APP_MESSAGINGSENDERID, 
+    appId:process.env.REACT_APP_APPID, 
 };
+
+// const firebaseConfigTesting = {
+//     apiKey: "AIzaSyDVQarbHh9vXtPNuz2boI8FNK9AjVNrKn0",
+//     authDomain: "testing-journalapp.firebaseapp.com",
+//     projectId: "testing-journalapp",
+//     storageBucket: "testing-journalapp.appspot.com",
+//     messagingSenderId: "206033707964",
+//     appId: "1:206033707964:web:b0f474f910965a518b01b9"
+// };
+
+
+// if (process.env.NODE_ENV === 'test') {
+//     //testin
+//process.env     firebase.initializeApp(firebaseConfigTesting);
+// }else{
+//     //dev/prod
+//     firebase.initializeApp(firebaseConfig);
+// }
 
 firebase.initializeApp(firebaseConfig);
 
